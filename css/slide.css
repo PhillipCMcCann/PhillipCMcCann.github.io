@@ -1,9 +1,9 @@
 @charset "utf-8";
 
 
-/*CSSスライドショー設定
+/*CSS Slideshow settings
 ---------------------------------------------------------------------------*/
-/*１枚目*/
+/*１st frame*/
 @keyframes slide1 {
 	0% {opacity: 0;}
 	10% {opacity: 1;}
@@ -11,7 +11,7 @@
 	40% {opacity: 0;}
 	100% {opacity: 0;}
 }
-/*２枚目*/
+/*２nd frame*/
 @keyframes slide2 {
 	0% {opacity: 0;}
 	20% {opacity: 0;}
@@ -20,7 +20,7 @@
 	70% {opacity: 0;}
 	100% {opacity: 0;}
 }
-/*３枚目*/
+/*３rd frame*/
 @keyframes slide3 {
 	0% {opacity: 0;}
 	50% {opacity: 0;}
@@ -32,32 +32,32 @@
 
 /*mainimg
 ---------------------------------------------------------------------------*/
-/*画像ブロック*/
+/*Image block*/
 #mainimg {
 	clear: left;width: 100%;margin: 0 auto;position: relative;
 }
-/*３枚画像の共通設定*/
+/*Common settings for 3 images*/
 .slide1,.slide2,.slide3 {
 	width: 100%;
-	animation-duration: 15s;	/*実行する時間。「s」は秒の事。*/
-	animation-iteration-count:infinite;		/*実行する回数。「infinite」は無限に繰り返す意味。*/
+	animation-duration: 15s;	/*Time to run. "S" means seconds.*/
+	animation-iteration-count:infinite;		/*The number of times to execute. "Infinite" means to repeat infinitely.*/
 	position: absolute;left:0px;top:0px;
 	animation-fill-mode: both;
 	animation-delay: 1s;
 }
-/*土台画像*/
+/*Base image*/
 .slide0 {
 	position: relative;width: 100%;height: auto;
 }
-/*１枚目*/
+/*１st slide*/
 .slide1 {
 	animation-name: slide1;	/*上で設定しているキーフレーム（keyframes）の名前*/
 }
-/*２枚目*/
+/*２nd slide*/
 .slide2 {
 	animation-name: slide2;	/*上で設定しているキーフレーム（keyframes）の名前*/
 }
-/*３枚目*/
+/*３rd slide*/
 .slide3 {
 	animation-name: slide3;	/*上で設定しているキーフレーム（keyframes）の名前*/
 }
