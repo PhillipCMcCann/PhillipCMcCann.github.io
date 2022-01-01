@@ -72,6 +72,38 @@ header #logo {
 	background: rgba(0,0,0,0);	/*画像の背景色。0,0,0は黒の事で0.5は50%色がついた状態。*/
 }
 
+@charset "utf-8";
+
+
+/*CSSスライドショー設定
+---------------------------------------------------------------------------*/
+/*１枚目*/
+@keyframes slide1 {
+	0% {opacity: 0;}
+	10% {opacity: 1;}
+	30% {opacity: 1;}
+	40% {opacity: 0;}
+	100% {opacity: 0;}
+}
+/*２枚目*/
+@keyframes slide2 {
+	0% {opacity: 0;}
+	20% {opacity: 0;}
+	30% {opacity: 1;}
+	60% {opacity: 1;}
+	70% {opacity: 0;}
+	100% {opacity: 0;}
+}
+/*３枚目*/
+@keyframes slide3 {
+	0% {opacity: 0;}
+	50% {opacity: 0;}
+	60% {opacity: 1;}
+	85% {opacity: 1;}
+	95% {opacity: 0;}
+	100% {opacity: 0;}
+}
+
 /*mainimg
 ---------------------------------------------------------------------------*/
 /*画像ブロック*/
@@ -103,6 +135,7 @@ header #logo {
 .slide3 {
 	animation-name: slide3;	/*上で設定しているキーフレーム（keyframes）の名前*/
 }
+
 
 /*contents block. A box that surrounds the main and sub blocks.
 ---------------------------------------------------------------------------*/
