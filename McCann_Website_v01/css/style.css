@@ -1,0 +1,553 @@
+@charset "utf-8";
+
+
+/* Load slide.css and lightbox.css
+------------------------------------------------------------------------------------------------------------------------------------------------------*/
+@import url(slide.css);
+@import url(lightbox.css);
+@import url("https://use.fontawesome.com/releases/v5.13.0/css/all.css");
+@import url("https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css");
+@import url("framework.css");
+
+/*Common settings for all terminals (PCs, tablets, smartphones)
+------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+/*Overall settings
+---------------------------------------------------------------------------*/
+body {
+	margin: 0px;
+	padding: 0px;
+	color: #777;	/*Overall text color*/
+	font-family:"ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;	/*フォント種類*/
+	font-size: 16px;	/*Text size*/
+	line-height: 2;		/*Line spacing*/
+	background: #fff;	/*Loading background color and background image*/
+	-webkit-text-size-adjust: none;
+}
+h1,h2,h3,h4,h5,p,ul,ol,li,dl,dt,dd,form,figure,form,input,textarea {margin: 0px;padding: 0px;font-size: 100%;font-weight: normal;}
+ul {list-style-type: none;}
+img {border: none;max-width: 100%;height: auto;vertical-align: middle;}
+table {border-collapse:collapse;font-size: 100%;border-spacing: 0;}
+iframe {width: 100%;}
+
+/*Link (general) settings
+---------------------------------------------------------------------------*/
+a {
+	color: #777;		/*Link text color*/
+	transition: 0.4s;	/*Time setting until the transition when the mouse is turned on. 0.4 seconds.*/
+	text-decoration: none;
+	
+}
+
+a:hover {
+	color: #f45872;			/*Text color when the mouse is on*/
+	text-decoration: none;	/*Setting to remove the underline when the mouse is turned on. If you want to keep it, delete this one line.*/
+}
+
+/*container。A block that surrounds the entire site
+---------------------------------------------------------------------------*/
+#container {
+	overflow: hidden;
+	max-width: 1200px;		/*Maximum width limit. It won't spread any more.*/
+	margin: 30px auto 0;    /*Position in the middle of the screen*/
+	box-shadow: 0px 0px 0px rgba(0,0,0,0.2);	/*The shadow of the box. Blur width to the right and down. 0,0,0 means black and 0.2 means 20% color.*/
+	border-radius: 30px;	/*Rounded corner size*/
+	padding: 40px;		/*Margins in the box*/
+	background: #fff;	/*Background color*/
+}
+
+/*header block
+---------------------------------------------------------------------------*/
+/*header block*/
+header {
+	position: relative;
+}
+/*logo inside header*/
+header #logo {
+	position: absolute;z-index: 1;
+	left: 5%;	/*Placed 5% from the left of header*/
+	top: 18%;	/*Placed 18% from the top of the header*/
+	width: 20%;	/*picture width*/
+	background: #000;	/*Background color (for older browsers)*/
+	background: rgba(0,0,0,0);	/*画像の背景色。0,0,0は黒の事で0.5は50%色がついた状態。*/
+}
+
+/*contents block. A box that surrounds the main and sub blocks.
+---------------------------------------------------------------------------*/
+#contents {
+	padding: 40px 0;	/*Margins in content to the top, bottom, left and right*/
+}
+
+/*main block
+---------------------------------------------------------------------------*/
+#main {
+	overflow: hidden;
+	float: right;		/*Wrap to the right*/
+	width: 70%;			/*Block width*/
+}
+/*h2 tag*/
+#main h2 {
+	clear: both;
+	margin-bottom: 20px;	/*Space under the heading (outside)*/
+	color: #fff;			/*Text color*/
+	background: #f45872 url(../images/arrow1.png) no-repeat left center;	/*Background color and background image (for older browsers)*/
+	background: url(../images/arrow1.png) no-repeat left center, linear-gradient(#fda3b2, #f4798d 49%, #f45872 50%);	/*Loading background image, gradation*/
+	border-radius: 30px;	/*Rounded corner size*/
+	padding: 10px 20px 10px 50px;	/*Margins in headings to top, right, bottom, left*/
+}
+/*h3 tag*/
+#main h3 {
+	clear: both;
+	margin-bottom: 20px;	/*Space under the heading (outside)*/
+	color: #333;			/*Text color*/
+	background: linear-gradient(#fff, #eee);	/*Gradation*/
+	border-radius: 30px;	/*Rounded corner size*/
+	padding: 5px 20px;		/*Margins in headings up, down, left and right*/
+	border: 1px solid #ccc;	/*Border width, line type, color*/
+}
+/*Paragraph (p) tag*/
+#main p {
+	padding: 0 20px 20px;	/*Top, left, right, bottom margins*/
+	line-height:134%
+}
+/*Other*/
+#main p + p {
+	margin-top: -10px;
+}
+#main h2 + p,
+#main h3 + p {
+	margin-top: -7px;
+}
+#main section + section {
+	clear: both;
+	padding-top: 30px;
+}
+
+/*Gallery page thumbnail
+---------------------------------------------------------------------------*/
+/*A block that surrounds the entire photo*/
+.photo-block {
+	overflow: hidden;
+	margin: 0 20px 20px;	/*Space to open outside the box to the top, left, right, and bottom*/
+}
+/*Image*/
+.list figure {
+	width: 25%;			/*Image width*/
+	float: left;		/*Wrap to the left*/
+	transition: 0.4s;	/*Time setting until the transition when the mouse is turned on. 0.4 seconds.*/
+}
+.list p{
+	text-align:center;
+}
+/*Image when the mouse is on*/
+.list a:hover figure {
+	opacity: 0.6;		/*Get 60% of the color of the image*/
+}
+/*Circular style*/
+.list.circle figure img {
+	border-radius: 50%;
+}
+
+/*The sub block
+---------------------------------------------------------------------------*/
+#sub {
+	float: left;		/*Wrap to the left*/
+	width: 25%;			/*Block width*/
+	text-align: center;	/*In the center of the block*/
+}
+/*h2 tag*/
+#sub h2 {
+	padding: 10px;	/*Margins in headings*/
+	color: #fff;	/*Text color*/
+	font-size: 20px;
+	margin-bottom: -10px;
+}
+
+/*Menu block
+---------------------------------------------------------------------------*/
+/*Configure the entire menu block.*/
+#menubar {
+	margin-bottom: 20px;	/*Leave space below the menu block.*/
+	border-radius: 30px;
+	background: #f45872;
+	
+}
+/*Settings for each menu item*/
+#menubar li a {
+	text-decoration: none;display: block;
+	padding: 10px;	/*Margins in the box*/
+	background: #eee;
+	margin-top: 5px;
+	
+}
+/*Settings for each menu hover*/
+#menubar li a:hover
+{
+	opacity: 0.5;
+}
+/*Don't display the menu for mobile phones.*/
+#menubar-s {display: none;}
+/*Do not display the three-bar icon.*/
+#menubar_hdr {display: none;}
+
+/*footer block
+---------------------------------------------------------------------------*/
+footer {
+	clear: both;
+	text-align: center;
+	color: #fff;			/*font color*/
+	padding-bottom: 2px;
+	background: #f45872;
+	max-width: 1200px;
+	margin: 30px auto 0;
+}
+footer a {
+	color: #fff;
+	text-decoration: none;}
+footer a:hover {
+	color: #777;				/*Text color when the mouse is on*/
+	text-decoration: none;	/*Setting to remove the underline when the mouse is turned on. If you want to keep it, delete this one line.*/
+}
+footer .pr {display: block;}
+
+/*Updates and announcements" block in the top page
+---------------------------------------------------------------------------*/
+/*Setting up the entire block*/
+#new dl {
+	padding: 0px 20px;		/*Margins in blocks to top, bottom, left and right*/
+	margin-bottom: 20px;	/*Margin to be left under (outside) the block.*/
+}
+/*Date setting*/
+#new dt {
+	float: left;
+	width: 9em;
+	letter-spacing: 0.1em;
+}
+/*Article settings*/
+#new dd {
+	padding-left: 9em;
+	border-bottom: 1px solid #ccc;	/*Underline width, line type, and color*/
+}
+
+/*Table（ta1）
+---------------------------------------------------------------------------*/
+/*Heading part (* caption) in the first row of the table*/
+.ta1 caption {
+	border: 1px solid #ccc;	/*Table border width, linetype, color*/
+	border-bottom: none;	/*Remove only the underline*/
+	text-align: left;		/*Left-justified characters*/
+	background: #eee;		/*Background color*/
+	font-weight: bold;		/*In bold*/
+	padding: 10px;		/*Margins in the box*/
+}
+/*ta1 setting*/
+.ta1 {
+	width: 100%;
+	table-layout: fixed;
+	margin-bottom: 20px;
+}
+.ta1, .ta1 td, .ta1 th {
+	word-break: break-all;
+	border: 1px solid #ccc;	/*Table border width, linetype, color*/
+	padding: 10px;			/*Margins in the box*/
+}
+/*Heading part in the first row of the table*/
+.ta1 th.tamidashi {
+	width: auto;
+	text-align: left;	/*Left*/
+	background: #eee;		/*Background color*/
+}
+/*left box of ta1*/
+.ta1 th {
+	width: 140px;	/*width*/
+	text-align: center;	/*centering*/
+	font-weight: normal;
+}
+
+/*PAGE TOP（↑）Configuration
+---------------------------------------------------------------------------*/
+@keyframes scroll {
+0% {opacity: 0;}
+100% {opacity: 1;}
+}
+/*Normal buttons are hidden*/
+body .nav-fix-pos-pagetop a {
+	display: none;
+}
+/*Button style that appears when the setting value set in fixmenu_pagetop.js is reached*/
+body.is-fixed-pagetop .nav-fix-pos-pagetop a {
+	display: block;text-decoration: none;text-align: center;z-index: 100;position: fixed;animation-name: scroll;animation-duration: 1s;animation-fill-mode: forwards;
+	width: 50px;		/*Button width*/
+	line-height: 50px;	/*Button height*/
+	bottom: 20px;		/*Placed 20px from the bottom of the window*/
+	right: 1%;			/*Placed 1% from the right of the window*/
+	color: #fff;		/*Letter color*/
+	border-radius: 50%;	/*Rounded corners specified. When set to 50%, it becomes circular. If you like the rectangle, delete this one line.*/
+	background: #000;	/*Background color*/
+}
+/*Background color when the mouse is on*/
+body.is-fixed-pagetop .nav-fix-pos-pagetop a:hover {
+	background:  #f45872;
+}
+
+/*"New" icon on the front page
+---------------------------------------------------------------------------*/
+.newicon {
+	background: #F00;	/*Background color*/
+	color: #FFF;		/*Character color*/
+	font-size: 70%;		/*Character size*/
+	line-height: 1.5;
+	padding: 2px 5px;
+	border-radius: 2px;
+	margin: 0px 5px;
+	vertical-align: text-top;
+}
+
+/*"Box
+---------------------------------------------------------------------------*/
+.Box1 {
+	background: #F00;	/*Background color*/
+	color: #FFF;		/*Character color*/
+	font-size: 70%;		/*Character size*/
+	line-height: 1.5;
+	padding: 100px 20px;
+	border-radius: 2px;
+	margin: 0px 5px;
+	vertical-align: text-top;
+}
+
+/*ul,ol Tags
+---------------------------------------------------------------------------*/
+ul.disc {
+	list-style: disc;
+	padding: 0 20px 20px 40px;
+}
+ul.square {
+	list-style: square;
+	padding: 0 20px 20px 40px;
+}
+ul.list {
+	list-style: none;
+	padding: 0 40px 20px 40px;
+}
+ol {
+	padding: 0 20px 20px 45px;
+}
+
+/* check block. It is a red note block.
+---------------------------------------------------------------------------*/
+p.check {
+	background: #ff0000;
+	color:#fff;
+	padding: 10px 25px !important;
+	margin-bottom: 20px;
+}
+p.check a {color: #fff;}
+
+/*Other
+---------------------------------------------------------------------------*/
+.look {background: #222;padding: 5px 10px;border-radius: 4px;border: 1px solid #333;color: #fff;}
+.mb15,.mb1em {margin-bottom: 15px !important;}
+.clear {clear: both;}
+.color1, .color1 a {color: #f45872 !important;}
+.pr {font-size: 10px;}
+.wl {width: 96%;}
+.ws {width: 50%;}
+.c {text-align: center;}
+.r {text-align: right;}
+.l {text-align: left;}
+.fl {float: left;}
+.fr {float: right;}
+.big1 {font-size: 40px;}
+.mini1 {font-size: 11px;display: inline-block;line-height: 1.5;}
+.sh {display: none;}
+
+
+
+/*Screen width 1350px or less setting
+------------------------------------------------------------------------------------------------------------------------------------------------------*/
+@media screen and (max-width:1350px){
+
+/*container。A block that surrounds the entire site
+---------------------------------------------------------------------------*/
+#container {
+	margin: 20px 3%;	/*containerの外側にとるスペース*/
+}
+
+}
+
+
+
+/*Screen width 800px or less setting
+
+------------------------------------------------------------------------------------------------------------------------------------------------------*/
+@media screen and (max-width:800px){
+
+/*container。A block that surrounds the entire site
+---------------------------------------------------------------------------*/
+#container {
+	box-shadow: none;
+	padding: 30px 30px 0;	/*Margins in the box. Top, left and right, bottom.*/
+}
+
+/*contents block. A box that surrounds the main and sub blocks.
+---------------------------------------------------------------------------*/
+#contents {
+	padding: 30px 0;	/*Margins in content to the top, bottom, left and right*/
+}
+
+/*Main menu
+---------------------------------------------------------------------------*/
+/* Animation frame settings. Think of it as a 100-frame animation.
+Specify from transparent (opacity: 0;) to add color (opacity: 1;). */
+@keyframes menubar {
+	0% {opacity: 0;}
+	100% {opacity: 1;}
+}
+/* Menu block for smartphones */
+#menubar-s {
+	display: block;overflow: hidden;
+	position: absolute;z-index: 2;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	animation-name: menubar;		/*上のkeyframesの名前*/
+	animation-duration: 0.5s;	/*Animation execution time. 0.5 seconds.*/
+	animation-fill-mode: both;	/*Keeps the first keyframe while waiting and the last keyframe after completion*/
+	background: rgba(0,0,0,0.7);	/*Background color. 0,0,0 means black and 0.7 means 70% colored.*/
+}
+/*Settings per menu*/
+#menubar-s li a {
+	display: block;text-decoration: none;
+	padding: 10px 3%;	/*Margins in the menu. Up down left right.*/
+	color: #fff;		/*Letter color*/
+	font-size: 20px;	/*font size*/
+	text-align: center;	/*Centering the text*/
+	border-bottom: 1px solid #fff;	/*Bottom line width, line type, color*/
+}
+/*Description notation (decorative characters)*/
+#menubar-s li a span {
+	display: block;
+	font-size: 12px;/*font size*/
+}
+/*Hide the menu for PC*/
+#menubar {display: none;}
+
+/*3 bar icon setting
+---------------------------------------------------------------------------*/
+/*3 bar blocks*/
+#menubar_hdr {
+	display: block;position: absolute;z-index: 3;
+	top: 5px;	/*上Placement from*/
+	right: 1%;	/*Placement from the right*/
+}
+/*Icon common settings*/
+#menubar_hdr.close,
+#menubar_hdr.open {
+	width: 50px;		/*Width*/
+	height: 50px;		/*Height*/
+	border-radius: 50%;	/*Make it circular*/
+	border: 1px solid #fff;
+}
+/*Three bar icon*/
+#menubar_hdr.close {
+	background: #f45872 url(../images/icon_menu.png) no-repeat center top/50px;	/*The background color, reading the background image, and displaying the upper half of the image (three marks). The width is 50px.*/
+}
+/*Close icon*/
+#menubar_hdr.open {
+	background: #f45872 url(../images/icon_menu.png) no-repeat center bottom/50px;	/*Background color Reads the background image and displays the lower half (x mark) of the image. The width is 50px.*/
+}
+
+/*main,sub block
+---------------------------------------------------------------------------*/
+#main,#sub {
+	float: none;
+	width: auto;
+}
+
+/*other
+---------------------------------------------------------------------------*/
+body.s-n #sub,body.s-n #footermenu,.m-n {display: none;}
+.big1 {font-size: 24px;}
+.fl {float: none;}
+.fr {float: none;}
+.sh {display:block;}
+.pc {display:none;}
+
+}
+
+
+
+/*Screen width 480px or less setting
+------------------------------------------------------------------------------------------------------------------------------------------------------*/
+@media screen and (max-width:480px){
+
+/*Overall settings
+---------------------------------------------------------------------------*/
+body {
+	font-size: 11px;	/*letter size*/
+	background: #fff;	/*background color*/
+}
+
+/*container。A block that surrounds the entire site
+---------------------------------------------------------------------------*/
+#container {
+	margin: 0;border-radius: 0px;
+	padding: 20px 20px 0;	/*Margins in the box. Top, left and right, bottom。*/
+	line-height: 1.5;	/*Line spacing*/
+}
+
+/*contents block. A box that surrounds the main and sub blocks.
+---------------------------------------------------------------------------*/
+#contents {
+	padding: 20px 0;	/*Margins in content to the top, bottom, left and right*/
+}
+
+/*main block
+---------------------------------------------------------------------------*/
+/*h2 tag*/
+#main h2 {
+	font-size: 14px;	/*letter size*/
+	padding-left: 40px;	/*Overwrite left margin*/
+}
+/*h3 tag*/
+#main h3 {
+	font-size: 13px;	/*letter size*/
+}
+
+/*Updates and announcements" block in the top page
+---------------------------------------------------------------------------*/
+/*Setting up the entire block*/
+#new dl {
+	padding: 0px 10px;		/*Margins in blocks to top, bottom, left and right*/
+}
+
+/*table（ta1）
+---------------------------------------------------------------------------*/
+/*Heading part (* caption) in the first row of the table*/
+.ta1 caption {
+	padding: 5px;	/*Margins in the box*/
+}
+.ta1, .ta1 td, .ta1 th {
+	padding: 5px;	/*Margins in the box*/
+}
+/*left box of ta1*/
+.ta1 th {
+	width: 100px;	/*width*/
+}
+
+/*ol tag
+---------------------------------------------------------------------------*/
+ol {
+	padding: 0 20px 20px 40px;
+}
+
+/*Other
+---------------------------------------------------------------------------*/
+.ws,.wl {width: 94%;}
+.big1 {font-size: 18px;letter-spacing: normal;}
+img.fr,img.fl {float: none;margin: 0;width: 100%;}
+.sh {display:block;}
+.pc {display:none;}
+
+}
