@@ -409,7 +409,7 @@ Specify from transparent (opacity: 0;) to add color (opacity: 1;). */
 	top: 0px;
 	left: 0px;
 	width: 100%;
-	animation-name: menubar;		/*上のkeyframesの名前*/
+	animation-name: menubar;		/*The name of the keyframes above*/
 	animation-duration: 0.5s;	/*Animation execution time. 0.5 seconds.*/
 	animation-fill-mode: both;	/*Keeps the first keyframe while waiting and the last keyframe after completion*/
 	background: rgba(0,0,0,0.7);	/*Background color. 0,0,0 means black and 0.7 means 70% colored.*/
